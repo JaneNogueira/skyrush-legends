@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SkyRush Legends</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">SkyRush Legends</div>
+    <div class="brand-sub">Adventure Platform Arena</div>
+
+    <div class="top-panels">
+      <div class="panel">
+        <div class="hud">
+          <div class="hud-item"><small>Fase</small><span id="phaseLabel">1</span></div>
+          <div class="hud-item"><small>Pontos</small><span id="scoreLabel">0</span></div>
+          <div class="hud-item"><small>Vidas</small><span id="livesLabel">3</span></div>
+          <div class="hud-item"><small>Checkpoint</small><span id="checkpointLabel">Início</span></div>
+          <div class="hud-item"><small>HP</small><span id="hpLabel">100</span></div>
+          <div class="hud-item"><small>Personagem</small><span id="characterLabel">Runner</span></div>
+          <div class="hud-item"><small>Habilidade</small><span id="abilityLabel">Sprint</span></div>
+          <div class="hud-item"><small>Status</small><span id="msg">Pronto</span></div>
+          <div class="hud-item"><small>Jogo</small><span id="gameStateLabel">Menu</span></div>
+          <div class="hud-item"><small>Nome</small><span id="gameNameLabel">SkyRush Legends</span></div>
+        </div>
+
+        <div class="character-area" id="characterButtons"></div>
+
+        <div class="rank-actions" style="justify-content:center;margin-top:12px;">
+          <button class="mini-btn pause" onclick="togglePause()">Pausar / Continuar</button>
+          <button class="mini-btn stop" onclick="stopGame()">Parar jogo</button>
+          <button class="mini-btn" onclick="openStartMenu()">Menu inicial</button>
+          <button class="mini-btn" onclick="toggleAudio()">Música on/off</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;">
+          <strong>Ranking de vencedores</strong>
+          <span style="opacity:.8;font-size:13px;">Salvo no navegador</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jogador</th>
+              <th>Pontos</th>
+              <th>Fase</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="rankingBody"></tbody>
+        </table>
+        <div class="rank-actions">
+          <button class="mini-btn" onclick="showPlayerNamePrompt()">Definir nome</button>
+          <button class="mini-btn danger" onclick="clearRanking()">Limpar ranking</button>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="game" width="1920" height="1080"></canvas>
+
+    <div class="controls">
+      <span class="kbd">←</span> mover
+      <span class="kbd">→</span> mover
+      <span class="kbd">↑</span> pular
+      <span class="kbd">Space</span> pular
+      <span class="kbd">Shift</span> habilidade
+      <span class="kbd">P</span> pausar
+      <span class="kbd">O</span> parar
+      <span class="kbd">R</span> reiniciar
+    </div>
+  </div>
+
+  <div id="startMenu" class="overlay">
+    <div class="menu-card">
+      <div class="hero-badge">NOVO VISUAL OFICIAL</div>
+      <h2 class="menu-title">SkyRush Legends</h2>
+      <div class="menu-subtitle">
+        Corra, salte, sobreviva aos obstáculos e domine cinco fases com personagens únicos, habilidades exclusivas e checkpoints estratégicos.
+      </div>
+
+      <div class="name-row">
+        <input id="menuPlayerName" type="text" maxlength="18" placeholder="Digite o nome do jogador" />
+        <button id="saveNameBtn" class="cta secondary" onclick="saveMenuPlayerName()">Salvar nome</button>
+        <button id="startGameBtn" class="cta primary" onclick="startGameFromMenu()">INICIAR JOGO</button>
+      </div>
+
+      <div class="cards" id="menuCards"></div>
+
+      <div class="mini-info">
+        <div class="mini-box"><strong>Música</strong><br>Trilha gerada dinamicamente no navegador.</div>
+        <div class="mini-box"><strong>Efeitos</strong><br>Pulo, dano, checkpoint e vitória com áudio.</div>
+        <div class="mini-box"><strong>Seleção</strong><br>Escolha seu herói antes de iniciar.</div>
+      </div>
+
+      <div class="menu-actions">
+        <button class="cta secondary" onclick="previewSelectedCharacter()">Prévia do personagem</button>
+        <button class="cta ghost" onclick="toggleAudio()">Música on/off</button>
+      </div>
+
+      <div class="menu-footer">
+        Runner = sprint • Ninja = super pulo • Tank = resistência • Forest = agilidade total
+      </div>
+    </div>
+  </div>
+<script src="game.js"></script>
+</body>
+</html>
