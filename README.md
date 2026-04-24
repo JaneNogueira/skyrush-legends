@@ -51,3 +51,32 @@ Corra, salte e sobreviva em um mundo repleto de obstáculos, plataformas móveis
 ---
 
 ## 📦 Estrutura do projeto
+
+
+---
+
+## 🌐 Jogar online
+
+👉 (adicione aqui o link do GitHub Pages depois)
+
+---
+
+## 📱 Futuras melhorias
+
+- Versão mobile otimizada
+- Ranking online global
+- Sistema de save em nuvem
+- Novas fases e bosses
+- Efeitos visuais avançados
+
+---
+
+## 🏆 Objetivo
+
+Alcançar o final das fases com a maior pontuação possível e dominar todas as mecânicas do jogo.
+
+---
+
+## 📜 Licença
+
+Este projeto é livre para uso educacional e experimental.
