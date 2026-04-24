@@ -57,7 +57,7 @@ Corra, salte e sobreviva em um mundo repleto de obstáculos, plataformas móveis
 
 ## 🌐 Jogar online
 
-👉 (adicione aqui o link do GitHub Pages depois)
+👉 ([jogar agora](https://github.com/JaneNogueira/skyrush-legends))
 
 ---
 
